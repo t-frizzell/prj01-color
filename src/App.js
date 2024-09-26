@@ -11,16 +11,19 @@ import InputColor from './InputColor';
 
 function App() {
   // Create useState to hold the color value
-  const [color, setColor] = useState('white');
+  const [color, setColor] = useState('white'); // Defaults set in DisplayColor
+  const [hex, setHex] = useState('');
 
   return (
     <div className="App">
       <DisplayColor 
         color={color}
+        hex={hex}
       />
       <InputColor 
         color={color}
         setColor={setColor}
+        setHex={setHex}
       />
     </div>
   );

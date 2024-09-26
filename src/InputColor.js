@@ -1,9 +1,10 @@
 import React from 'react'
+import colorNames from 'colornames'
 
 // This will be the form to take the color input
 
 // Destructure Prop Drill useState variables & function
-const InputColor = ({color, setColor}) => {
+const InputColor = ({color, setColor, setHex}) => {
   return (
     <form onSubmit={(e) => {e.preventDefault()}}>
       <input 
@@ -11,7 +12,10 @@ const InputColor = ({color, setColor}) => {
         type="text"
         placeholder="Add color name"
         required
-        onChange={(e) => {setColor(e.target.value)}} 
+        onChange={(e) => {
+          setColor(e.target.value)
+          setHex(colorNames(e.target.value))
+        }} 
         onSubmit={(e) => {e.preventDefault()}} 
       >
       </input>

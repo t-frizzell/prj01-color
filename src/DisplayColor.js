@@ -3,7 +3,7 @@ import React from 'react'
 // With inline css, create a box
 // Set the style color to the color value (if available) (ternary)
 
-const DisplayColor = ({ color }) => {
+const DisplayColor = ({ color, hex }) => {
 return (
     <section
       style={
@@ -18,6 +18,9 @@ return (
       }>
           <p style={{color: color == "black" ? "white" : "black"}}> {/* Check if color is equal to */}
           {color ? color : "No Value"} {/* Check if color is not null */}
+          </p>
+          <p>
+            {hex ? hex : null}
           </p>
     </section>
   );

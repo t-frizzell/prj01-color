@@ -5,10 +5,10 @@ import React from 'react'
 
 const DisplayColor = ({ color }) => {
 return (
-    <header
+    <section
       style={
         {
-          backgroundColor: {color},
+          backgroundColor: color,
           flex: 1,
           padding: 20,
           marginTop: 20,
@@ -16,9 +16,16 @@ return (
           width: "auto"
         }
       }>
-        {color}
-    </header>
+          <p style={{color: color == "black" ? "white" : "black"}}> {/* Check if color is equal to */}
+          {color ? color : "No Value"} {/* Check if color is not null */}
+          </p>
+    </section>
   );
 };
+
+// Add in default props
+DisplayColor.defaultProps = {
+  color: "Empty Color Value"
+}
 
 export default DisplayColor

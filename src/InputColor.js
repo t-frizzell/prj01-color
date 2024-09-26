@@ -5,12 +5,15 @@ import React from 'react'
 // Destructure Prop Drill useState variables & function
 const InputColor = ({color, setColor}) => {
   return (
-    <form onChange={(e) => {e.preventDefault()}}>
+    <form onSubmit={(e) => {e.preventDefault()}}>
       <input 
-      onChange={(e) => {setColor(e.target.value)}} 
-      onSubmit={(e) => {e.preventDefault()}} 
+        autoFocus
+        type="text"
+        placeholder="Add color name"
+        required
+        onChange={(e) => {setColor(e.target.value)}} 
+        onSubmit={(e) => {e.preventDefault()}} 
       >
-        
       </input>
     </form>
   )
